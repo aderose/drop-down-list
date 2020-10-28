@@ -12,6 +12,6 @@
   \**********************/
 /*! unknown exports (runtime-defined) */
 /*! runtime requirements:  */
-eval("console.log('hello');\nconsole.log('bobo');\n\n\n//# sourceURL=webpack://dropdown-list/./src/index.js?");
+eval("console.log('hello world');\n\n\n//# sourceURL=webpack://dropdown-list/./src/index.js?");
 /******/ })()
 ;

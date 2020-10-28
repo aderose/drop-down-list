@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;700&display=swap');
+
+/* reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+a,
+a:visited {
+  font-size: 0.9em;
+  color: var(--main);
+  text-decoration: none;
+}
+
+/* General page settings */
+:root {
+  --main: #222;
+  --background: #eee;
+  --white: #fff;
+  --shadow: rgba(0, 0, 0, 0.1);
+  --highlight: rgb(47, 164, 236);
+}
+
+body {
+  background-color: var(--background);
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+  font-size: 14px;
+  color: var(--main);
+}
+
+/* header styling */
+header {
+  background: var(--white);
+  box-shadow: 0 0 5px 1px var(--shadow);
+}
+
+header h1 {
+  margin: 0 auto;
+  height: 75px;
+  line-height: 75px;
+  background-color: var(--highlight);
+  color: var(--white);
+  position: relative;
+  text-shadow: 1px 1px var(--shadow);
+}
+
+header h1::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 5px;
+  background-color: var(--white);
+  opacity: 0.3;
+  position: absolute;
+  bottom: 0;
+}
+
+/* nav styling */
+nav ul {
+  display: flex;
+  list-style-type: none;
+  width: 100%;
+}
+
+nav li {
+  height: 2.5em;
+  line-height: 2.5em;
+  width: 20%;
+  cursor: pointer;
+}
+
+nav li:hover {
+  font-weight: 700;
+}
+
+/* limit container width */
+.container {
+  width: 80%;
+  margin: 0 auto;
+  max-width: 800px;
+}

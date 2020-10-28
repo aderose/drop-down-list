@@ -1,3 +1,3 @@
 # Drop down list
 
-Implement a nav bar drop down list using vanilla JS.
+Implement a nav bar drop down list for desktop using vanilla JS.

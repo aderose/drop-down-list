@@ -72,13 +72,14 @@ nav li {
   cursor: pointer;
 }
 
-nav li:hover {
+nav li:hover a {
   font-weight: 700;
+  color: var(--highlight);
 }
 
 /* limit container width */
 .container {
   width: 80%;
   margin: 0 auto;
-  max-width: 800px;
+  max-width: 600px;
 }

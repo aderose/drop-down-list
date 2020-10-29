@@ -12,6 +12,7 @@
   "rules": {
     "prettier/prettier": "error",
     "no-console": "off",
-    "no-return-assign": "off"
+    "no-return-assign": "off",
+    "node/no-unsupported-features/es-syntax": "off"
   }
 }

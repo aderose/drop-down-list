@@ -1,5 +1,5 @@
 export default (function menuItem() {
-  function create(text, href) {
+  function create({ text, href }) {
     // create the link tag
     const link = document.createElement('a');
     link.setAttribute('href', href);

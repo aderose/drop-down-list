@@ -4,8 +4,8 @@ export default (function dropDownMenu() {
   function create(options) {
     const container = document.createElement('ul');
     container.setAttribute('class', 'menu-container');
-    options.forEach(({ text, href }) => {
-      container.appendChild(menuItem.create(text, href).container);
+    options.forEach((option) => {
+      container.appendChild(menuItem.create(option).container);
     });
     return { container };
   }

@@ -74,6 +74,7 @@ nav::before {
 
 .link-list {
   display: flex;
+  justify-content: center;
   list-style-type: none;
   width: 100%;
 }

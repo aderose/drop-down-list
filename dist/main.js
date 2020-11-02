@@ -20,7 +20,7 @@
 /*! runtime requirements: __webpack_require__, __webpack_exports__, __webpack_require__.r, __webpack_require__.d, __webpack_require__.* */
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => __WEBPACK_DEFAULT_EXPORT__\n/* harmony export */ });\n/* harmony import */ var _menuItem__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./menuItem */ \"./src/menuItem.js\");\n\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((function dropDownMenu() {\n  function create(options) {\n    const container = document.createElement('ul');\n    container.setAttribute('class', 'menu-container');\n    options.forEach((option) => {\n      container.appendChild(_menuItem__WEBPACK_IMPORTED_MODULE_0__.default.create(option).container);\n    });\n    return { container };\n  }\n\n  return { create };\n})());\n\n\n//# sourceURL=webpack://dropdown-list/./src/dropDownMenu.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => __WEBPACK_DEFAULT_EXPORT__\n/* harmony export */ });\n/* harmony import */ var _menuItem__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./menuItem */ \"./src/menuItem.js\");\n\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((function dropDownMenu() {\n  function create({ parent, options }) {\n    const container = document.createElement('ul');\n    container.setAttribute('class', 'menu-container');\n    options.forEach((option) => {\n      container.appendChild(_menuItem__WEBPACK_IMPORTED_MODULE_0__.default.create(option).container);\n    });\n    parent.appendChild(container);\n\n    function show() {\n      if (container.classList.contains('active')) return;\n      container.classList.add('visible');\n      setTimeout(() => {\n        container.classList.remove('visible');\n        container.classList.add('active');\n      }, 300);\n    }\n\n    function hide() {\n      if (!container.classList.contains('active')) return;\n      container.classList.add('hide');\n      setTimeout(() => {\n        container.classList.remove('hide');\n        container.classList.remove('active');\n      }, 300);\n    }\n\n    return { container, show, hide };\n  }\n\n  return { create };\n})());\n\n\n//# sourceURL=webpack://dropdown-list/./src/dropDownMenu.js?");
 
 /***/ }),
 
@@ -33,7 +33,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /*! runtime requirements: __webpack_require__, __webpack_require__.r, __webpack_exports__, __webpack_require__.* */
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _dropDownMenu__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./dropDownMenu */ \"./src/dropDownMenu.js\");\n\n\nconst myMenu = _dropDownMenu__WEBPACK_IMPORTED_MODULE_0__.default.create([\n  { text: 'Computers', href: '#' },\n  { text: 'Laptops', href: '#' },\n  { text: 'Tablets', href: '#' },\n  { text: 'Mobile Phones', href: '#' },\n  { text: 'Software', href: '#' },\n]);\n\ndocument.body.appendChild(myMenu.container);\n\nconsole.log('hello world');\n\n\n//# sourceURL=webpack://dropdown-list/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _menuManager__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./menuManager */ \"./src/menuManager.js\");\n\n\n_menuManager__WEBPACK_IMPORTED_MODULE_0__.default.createMenu({\n  parentSelector: '#categories',\n  initialiserSelector: '#categories button',\n  options: [\n    { text: 'Computers', href: '#' },\n    { text: 'Laptops', href: '#' },\n    { text: 'Tablets', href: '#' },\n    { text: 'Mobile Phones', href: '#' },\n    { text: 'Software', href: '#' },\n  ],\n});\n\n_menuManager__WEBPACK_IMPORTED_MODULE_0__.default.createMenu({\n  parentSelector: '#products',\n  initialiserSelector: '#products button',\n  options: [\n    { text: 'SuperComputer', href: '#' },\n    { text: 'PaperThin Laptop', href: '#' },\n    { text: 'The Tab', href: '#' },\n    { text: 'Magic Phone', href: '#' },\n    { text: 'Auto-Programmer', href: '#' },\n  ],\n});\n\n\n//# sourceURL=webpack://dropdown-list/./src/index.js?");
 
 /***/ }),
 
@@ -48,6 +48,20 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _dro
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => __WEBPACK_DEFAULT_EXPORT__\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((function menuItem() {\n  function create({ text, href }) {\n    // create the link tag\n    const link = document.createElement('a');\n    link.setAttribute('href', href);\n    link.setAttribute('class', 'menu-link');\n    link.textContent = text;\n\n    // create the item container and append the link\n    const container = document.createElement('li');\n    container.setAttribute('class', 'link-container');\n    container.appendChild(link);\n\n    return {\n      container,\n      link,\n    };\n  }\n\n  return { create };\n})());\n\n\n//# sourceURL=webpack://dropdown-list/./src/menuItem.js?");
+
+/***/ }),
+
+/***/ "./src/menuManager.js":
+/*!****************************!*\
+  !*** ./src/menuManager.js ***!
+  \****************************/
+/*! namespace exports */
+/*! export default [provided] [no usage info] [missing usage info prevents renaming] */
+/*! other exports [not provided] [no usage info] */
+/*! runtime requirements: __webpack_require__, __webpack_exports__, __webpack_require__.r, __webpack_require__.d, __webpack_require__.* */
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => __WEBPACK_DEFAULT_EXPORT__\n/* harmony export */ });\n/* harmony import */ var _dropDownMenu__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./dropDownMenu */ \"./src/dropDownMenu.js\");\n\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((function menuManager() {\n  function createMenu({ parentSelector, initialiserSelector, options }) {\n    const parent = document.querySelector(parentSelector);\n    const menu = _dropDownMenu__WEBPACK_IMPORTED_MODULE_0__.default.create({ parent, options });\n\n    parent.addEventListener('click', () => menu.show());\n\n    window.addEventListener('click', (e) => {\n      if (!e.target.matches(initialiserSelector)) menu.hide();\n    });\n\n    return menu;\n  }\n\n  return { createMenu };\n})());\n\n\n//# sourceURL=webpack://dropdown-list/./src/menuManager.js?");
 
 /***/ })
 

@@ -1,5 +1,6 @@
 import menuManager from './menuManager';
 
+// create the categories menu
 menuManager.createMenu({
   parentSelector: '#categories',
   initialiserSelector: '#categories button',
@@ -12,6 +13,7 @@ menuManager.createMenu({
   ],
 });
 
+// create the products menu
 menuManager.createMenu({
   parentSelector: '#products',
   initialiserSelector: '#products button',
@@ -24,6 +26,7 @@ menuManager.createMenu({
   ],
 });
 
+// create the hamburger menu
 menuManager.createMenu({
   parentSelector: 'header nav',
   initialiserSelector: '#hamburger',

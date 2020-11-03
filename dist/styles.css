@@ -153,3 +153,22 @@ nav::before {
     transform: translateY(0);
   }
 }
+
+.hamburger {
+  display: none;
+}
+
+@media (max-width: 500px) {
+  .link-list {
+    display: none;
+  }
+
+  .hamburger {
+    display: block;
+    margin: 0 auto;
+    color: var(--highlight);
+    font-size: 3em;
+    position: relative;
+    z-index: 2;
+  }
+}

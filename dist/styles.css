@@ -166,9 +166,22 @@ nav::before {
   .hamburger {
     display: block;
     margin: 0 auto;
-    color: var(--highlight);
-    font-size: 3em;
     position: relative;
     z-index: 2;
+  }
+
+  .hamburger i {
+    font-size: 3em;
+    padding: 0.25em;
+    color: var(--highlight);
+  }
+
+  .menu-container {
+    width: 100vw;
+  }
+
+  .menu-link {
+    text-align: center;
+    font-size: 2em;
   }
 }

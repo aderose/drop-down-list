@@ -23,3 +23,15 @@ menuManager.createMenu({
     { text: 'Auto-Programmer', href: '#' },
   ],
 });
+
+menuManager.createMenu({
+  parentSelector: 'header nav',
+  initialiserSelector: '#hamburger',
+  options: [
+    { text: 'Home', href: '#' },
+    { text: 'Categories', href: '#' },
+    { text: 'Products', href: '#' },
+    { text: 'About Us', href: '#' },
+    { text: 'Contact', href: '#' },
+  ],
+});
